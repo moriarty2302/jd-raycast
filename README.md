@@ -110,9 +110,9 @@ otherwise run `jd new wp --refresh` in Terminal after editing the template.
 
 5. Open Raycast and run **Search Johnny.Decimal** or **New Work
    Package**. To call them up quickly, give each an alias (e.g. `jd`,
-   `wp`) or a hotkey in Raycast Settings → Extensions → JD Search.
+   `wp`) or a hotkey in Raycast Settings → Extensions → JD Tools.
 
-Settings, in the same pane (select JD Search itself):
+Settings, in the same pane (select JD Tools itself):
 
 | Setting | Default | Use |
 |---|---|---|
@@ -136,7 +136,7 @@ Reopen the command in Raycast to pick up the new version.
 
 ### Uninstall
 
-In Raycast Settings → Extensions, select JD Search and choose Uninstall
+In Raycast Settings → Extensions, select JD Tools and choose Uninstall
 Extension. Then delete the `jd-raycast` folder. Nothing else is installed.
 Work packages you made stay where jd put them.
 

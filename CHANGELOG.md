@@ -1,4 +1,4 @@
-# JD Search Changelog
+# JD Tools Changelog
 
 ## [1.1.0] - 2026-10-22
 

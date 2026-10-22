@@ -1,8 +1,8 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "jd-search",
-  "title": "JD Search",
-  "description": "Search every Johnny.Decimal system jd knows about, across the vault and the filesystem at once",
+  "title": "JD Tools",
+  "description": "Search your Johnny.Decimal systems across the vault and the filesystem, and make work packages with jd",
   "icon": "extension-icon.png",
   "author": "moriarty2302",
   "platforms": [
