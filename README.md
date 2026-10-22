@@ -1,4 +1,4 @@
-# JD Search
+# Johnny Decimal (JD) Raycast extension
 
 > Mostly written by Claude. See [AI attribution](#ai-attribution).
 
