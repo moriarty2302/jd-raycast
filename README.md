@@ -1,4 +1,4 @@
-# Johnny Decimal (JD) Raycast extension
+# Raycast extension for Johnny.Decimal (JD)
 
 > Mostly written by Claude. See [AI attribution](#ai-attribution).
 
