@@ -1,0 +1,75 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "jd-search",
+  "title": "JD Search",
+  "description": "Search every Johnny.Decimal system jd knows about, across the vault and the filesystem at once",
+  "icon": "extension-icon.png",
+  "author": "moriarty2302",
+  "platforms": [
+    "macOS"
+  ],
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "preferences": [
+    {
+      "name": "jdConfigPath",
+      "type": "file",
+      "required": false,
+      "title": "jd config file",
+      "description": "Leave blank to ask jd where its config is (jd paths), or ~/.config/johnnydecimal/config.json without jd"
+    },
+    {
+      "name": "jdPath",
+      "type": "file",
+      "required": false,
+      "title": "jd program",
+      "description": "Leave blank to use ~/.local/share/johnnydecimal/cli/bin/jd"
+    },
+    {
+      "name": "folderNotes",
+      "type": "checkbox",
+      "required": false,
+      "default": false,
+      "title": "Folder notes",
+      "label": "Put new notes in a same-named folder",
+      "description": "jd makes a bare note (W0033~21.25 Title.md). Turn this on if your vault keeps each note in a folder of the same name, and the note is moved there after jd makes it."
+    }
+  ],
+  "commands": [
+    {
+      "name": "search",
+      "title": "Search Johnny.Decimal",
+      "description": "Find an ID, category, area or work package by number or by words, and open its note or folder.",
+      "mode": "view"
+    },
+    {
+      "name": "new-work-package",
+      "title": "New Work Package",
+      "description": "Make a work package with jd: the next W number, its note, folder and task project.",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.7",
+    "@raycast/utils": "^1.17.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
+    "probe": "node --no-warnings scripts/probe.ts",
+    "test": "node --no-warnings --test tests/*.test.ts",
+    "publish": "echo 'Private extension: not for the Raycast Store' && exit 1"
+  }
+}
