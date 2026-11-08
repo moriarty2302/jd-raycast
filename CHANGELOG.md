@@ -1,5 +1,14 @@
 # JD Tools Changelog
 
+## [1.1.1] - 2026-11-08
+
+### Fixed
+
+- Reads jd 5's configuration file (version 2), where `jdex` is an object
+  with the folder in `path` and the task app is `tasks.app`. Before, no
+  system was found, and New Work Package said none was set up. Version 1
+  configs still work.
+
 ## [1.1.0] - 2026-10-22
 
 ### Added

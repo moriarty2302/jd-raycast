@@ -27,15 +27,25 @@ export function readSystems(configPath: string = DEFAULT_CONFIG_PATH): JdSystem[
     // jd's own example calls this "title"; older configs say "name".
     name: s.name ?? (s as { title?: string }).title ?? s.sys,
     root: s.root,
-    jdex: typeof s.jdex === "string" && s.jdex ? s.jdex : undefined,
+    jdex: jdexPath(s),
     default: s.default === true,
     workPackages: typeof (s as { workPackages?: unknown }).workPackages === "object",
     wpTasks: taskAdapter(s),
   }));
 }
 
+// Config version 2 (jd 5) makes `jdex` an object with the folder in `path`;
+// version 1 had the folder as a plain string.
+function jdexPath(s: unknown): string | undefined {
+  const j = (s as { jdex?: unknown }).jdex;
+  const p = typeof j === "object" && j !== null ? (j as { path?: unknown }).path : j;
+  return typeof p === "string" && p ? p : undefined;
+}
+
+// Version 2 names the task app `app`; version 1 called it `adapter`.
 function taskAdapter(s: unknown): string | undefined {
-  const a = (s as { workPackages?: { tasks?: { adapter?: unknown } } }).workPackages?.tasks?.adapter;
+  const t = (s as { workPackages?: { tasks?: { app?: unknown; adapter?: unknown } } }).workPackages?.tasks;
+  const a = t?.app ?? t?.adapter;
   return typeof a === "string" && a !== "none" ? a : undefined;
 }
 
@@ -45,7 +55,7 @@ function isSystem(s: unknown): s is JdSystem {
   return (
     typeof o.sys === "string" &&
     typeof o.root === "string" &&
-    (o.jdex === undefined || o.jdex === null || typeof o.jdex === "string")
+    (o.jdex === undefined || o.jdex === null || typeof o.jdex === "string" || typeof o.jdex === "object")
   );
 }
 
