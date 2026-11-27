@@ -219,7 +219,9 @@ function Actions({ entry: e, newWp, onOpen }: { entry: Entry; newWp: boolean; on
       title="Open Folder in Finder"
       icon={Icon.Finder}
       target={e.folderPath}
-      application="Finder"
+      // No application: macOS opens a folder with Finder by default. Naming Finder
+      // (by name or by com.apple.finder) made Raycast pick AirDrop.app, which
+      // lives inside Finder.app, on some Macs, and that opens the AirDrop window.
       onOpen={() => onOpen(e)}
     />
   ) : (

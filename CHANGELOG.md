@@ -1,5 +1,15 @@
 # JD Tools Changelog
 
+## [1.1.2] - 2026-11-27
+
+### Fixed
+
+- Open Folder in Finder (⌘ Enter in the search, and after making a work
+  package) opened the AirDrop window on some Macs. Raycast's own lookup
+  of an app called Finder, by name or as `com.apple.finder`, can match
+  AirDrop.app, which lives inside Finder.app. The action now names no
+  app, so macOS opens the folder with its default app, Finder.
+
 ## [1.1.1] - 2026-11-08
 
 ### Fixed

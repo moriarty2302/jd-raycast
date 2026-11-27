@@ -252,7 +252,8 @@ function Result({ made }: { made: Made }) {
             icon={Icon.Document}
             target={`obsidian://open?path=${encodeURIComponent(made.note)}`}
           />
-          <Action.Open title="Open Folder in Finder" icon={Icon.Finder} target={made.folder} application="Finder" />
+          {/* No application: naming Finder made Raycast pick AirDrop.app on some Macs. */}
+          <Action.Open title="Open Folder in Finder" icon={Icon.Finder} target={made.folder} />
           {made.tasksUrl && <Action.Open title="Open Task Project" icon={Icon.CheckList} target={made.tasksUrl} />}
           <Action.CopyToClipboard title="Copy W Number" content={made.num} />
         </ActionPanel>
